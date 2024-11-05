@@ -39,23 +39,39 @@ The **Matrisk-Pooling Algorithm** is a high-efficiency testing solution that org
 
 ## 🧠 Method Overview
 
-The Matrisk-Pooling Algorithm operates through a three-step process to efficiently identify COVID-19 positive cases while conserving testing resources.
+The Matrisk-Pooling Algorithm is designed to optimize the testing process by utilizing risk-based assessment. To understand its benefits, let’s first consider a **Random Pooling** method, which lacks risk prioritization.
 
-### Step 1: Risk Assessment
-Individuals are ranked by their infection probability based on predefined risk factors. This stage ensures the pooling process targets high-risk samples.
+### Random Pooling Process
+In a random pooling setup, individuals arrive and are divided arbitrarily. For this example, assume they are split into two groups, with each group being tested using a single shared test tube. Here’s how it works:
+
+1. **Pooling and Testing**: Each group submits their samples into a collective test tube. The test tube is then analyzed to detect any sign of infection.
+2. **Result Interpretation**:
+   - **Negative Result**: If the test tube returns a negative result, everyone in that group is released without further testing.
+   - **Positive Result**: If the test tube returns a positive indication, each individual in that group must undergo separate, individual testing to identify the infected person(s).
+   
+While simple, this method has drawbacks:
+- **Higher Resource Consumption**: When a pooled test returns positive, every member of that group must be retested individually, increasing time and resource demands.
+- **Low Precision**: Random grouping does not account for individual infection risk, which can lead to inefficient testing, especially in populations with varying risk profiles.
+
+![Random Pooling Process](https://your-image-url.com/random_pooling.png)
+
+### Matrisk-Pooling Algorithm - Enhanced Pooling Based on Risk
+In contrast, the Matrisk-Pooling Algorithm incorporates individual risk factors to prioritize high-risk individuals, making the testing process more resource-efficient and accurate.
+
+#### Step 1: Risk Assessment
+Individuals are ranked by their infection probability based on predefined risk factors. This stage ensures the pooling process targets high-risk samples, which maximizes the effectiveness of each test.
 
 ![Risk Assessment](https://your-image-url.com/risk_assessment.png)
 
-### Step 2: Matrix Pooling
-Samples are arranged in a matrix structure, allowing pooled testing of rows and columns. This matrix layout reduces the number of tests required while ensuring accuracy.
+#### Step 2: Matrix Pooling
+After risk assessment, samples are arranged in a matrix where each row and column represents a pooled group. This configuration minimizes the number of tests required while allowing precise identification of infected individuals.
 
 ![Matrix Pooling](https://your-image-url.com/matrix_pooling.png)
 
-### Step 3: Identifying Infected Patients
-Based on the pooled test results, individuals likely to be infected are identified. This step allows for further testing if necessary, achieving both speed and precision.
+#### Step 3: Identifying Infected Patients
+Following the pooled test results, the algorithm identifies individuals likely to be infected and refines the pool with additional testing if needed. This step ensures both speed and accuracy in isolating infected patients.
 
 ![Identifying Patients](https://your-image-url.com/identifying_patients.png)
-
 ---
 
 ## 🔥 Features
