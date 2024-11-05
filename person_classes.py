@@ -231,108 +231,11 @@ class PersonSet:
                     # אין צורך בבדיקות נוספות
                     continue
                 tests_used += 1
-
-
-        # if sum(row_pool) == 1 or sum(col_pool) == 1:
-        #     # if test result positive
-        #     for row in line_rows:
-        #         for col in line_col:
-        #             lst_of_sick.append((row, col))
-        #
-        # elif sum(row_pool) == 2 and sum(col_pool) == 2:
-        #     tests_used += 1
-        #     if self.infection_set[min(line_rows), max(line_col)]:
-        #         # Positive results
-        #         lst_of_sick.append((min(line_rows), max(line_col)))
-        #         tests_used += 1
-        #         if self.infection_set[max(line_rows), min(line_col)]:
-        #             lst_of_sick.append((max(line_rows), min(line_col)))
-        #             tests_used += 2
-        #             if self.infection_set[min(line_rows), min(line_col)]:
-        #                 lst_of_sick.append((min(line_rows), min(line_col)))
-        #             if self.infection_set[max(line_rows), max(line_col)]:
-        #                 lst_of_sick.append((max(line_rows), max(line_col)))
-        #         else:
-        #             lst_of_sick.append((min(line_rows), min(line_col)))
-        #             lst_of_sick.append((max(line_rows), max(line_col)))
-        #
-        #     else:
-        #         # Negative results
-        #         lst_of_sick.append((min(line_rows), min(line_col)))
-        #         lst_of_sick.append((max(line_rows), max(line_col)))
-        #         tests_used += 1
-        #         if self.infection_set[max(line_rows), min(line_col)]:
-        #             lst_of_sick.append((max(line_rows), min(line_col)))
-        #
-        # else:
-        #     for row in line_rows:
-        #         for col in line_col:
-        #             # if test result positive
-        #             if self.infection_set[row, col]:
-        #                 lst_of_sick.append((row, col))
-        #             tests_used += 1
-
-
-        # # go over all intersections
-        # for row in line_rows:
-        #     for col in line_col:
-        #         # if test result positive
-        #         if self.infection_set[row, col]:
-        #             lst_of_sick.append((row, col))
-        #         # caught by pooling - no further tests needed
-        #         if sum(row_pool) == 1 or sum(col_pool) == 1:
-        #             # אין צורך בבדיקות נוספות
-        #             continue
-        #         elif sum(row_pool) == 2 and sum(col_pool) == 2:
-        #             pass
-        #         # otherwise, an individual test is needed
-        #         tests_used += 1
-
         self.found_coords = lst_of_sick
         self.find_ids()
         self.n_found = len(lst_of_sick)
         self.tests_used = tests_used
         return lst_of_sick, self.n_found, tests_used
-
-    # def find_smartly(self, row_pool, col_pool):
-    #     if sum(row_pool) == 1 or sum(col_pool) == 1:
-    #         # if test result positive
-    #         for row in line_rows:
-    #             for col in line_col:
-    #                 lst_of_sick.append((row, col))
-    #
-    #     elif sum(row_pool) == 2 and sum(col_pool) == 2:
-    #         tests_used += 1
-    #         if self.infection_set[min(line_rows), max(line_col)]:
-    #             # Positive results
-    #             lst_of_sick.append((min(line_rows), max(line_col)))
-    #             tests_used += 1
-    #             if self.infection_set[max(line_rows), min(line_col)]:
-    #                 lst_of_sick.append((max(line_rows), min(line_col)))
-    #                 tests_used += 2
-    #                 if self.infection_set[min(line_rows), min(line_col)]:
-    #                     lst_of_sick.append((min(line_rows), min(line_col)))
-    #                 if self.infection_set[max(line_rows), max(line_col)]:
-    #                     lst_of_sick.append((max(line_rows), max(line_col)))
-    #             else:
-    #                 lst_of_sick.append((min(line_rows), min(line_col)))
-    #                 lst_of_sick.append((max(line_rows), max(line_col)))
-    #
-    #         else:
-    #             # Negative results
-    #             lst_of_sick.append((min(line_rows), min(line_col)))
-    #             lst_of_sick.append((max(line_rows), max(line_col)))
-    #             tests_used += 1
-    #             if self.infection_set[max(line_rows), min(line_col)]:
-    #                 lst_of_sick.append((max(line_rows), min(line_col)))
-    #
-    #     else:
-    #         for row in line_rows:
-    #             for col in line_col:
-    #                 # if test result positive
-    #                 if self.infection_set[row, col]:
-    #                     lst_of_sick.append((row, col))
-    #                 tests_used += 1
 
     def find_ids(self):
         for i, j in self.found_coords:
