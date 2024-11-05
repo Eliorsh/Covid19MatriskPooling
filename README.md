@@ -75,7 +75,7 @@ To set up the project locally, clone the repository and install required package
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Eliorsh/Covid19MatriskPooling.git
 cd your-repo-name
 
 # Install dependencies
